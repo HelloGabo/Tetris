@@ -43,3 +43,14 @@ public class G
     /// </summary>
     public static int SCENE_HEIGHT = 12;
 }
+
+
+
+public class Utility
+{
+    public static T GetXmlConfig<T>(string xmlResourcePath)
+    {
+        var configTA = Resources.Load<TextAsset>(xmlResourcePath);
+        return XmlSerializeUtil.DeserializeXml<T>(configTA.text);
+    }
+}

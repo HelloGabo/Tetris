@@ -23,14 +23,21 @@ public class GameStatePlay : GameStateBase
 
     public override bool Start()
     {
+        UIManager.mInstance.Show<UIPlay>("UIPlay");
         Application.LoadLevel("Play");
-
+        TetrisManager.mInstance.Init();
         return base.Start();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        TetrisManager.mInstance.Update();
     }
 
     public override void End()
     {
-
+        UIManager.mInstance.Hide("UIPlay");
     }
 
     public void Pause(bool bPause)

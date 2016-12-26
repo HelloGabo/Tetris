@@ -61,9 +61,18 @@ public class UIStart : UIBase, CustomButtonListEvent
     {
         base.OnLoad(root);
 
-        m_ButtonList.Push(FindChild("Bg/Start").GetComponent<CustomButton>());
-        m_ButtonList.Push(FindChild("Bg/Info").GetComponent<CustomButton>());
-        m_ButtonList.Push(FindChild("Bg/Info2").GetComponent<CustomButton>());
+        string[] buttonNames = { "Bg/Start", "Bg/Info", "Bg/Info2" };
+
+        CustomButton customButton = null;
+        for(int i=0; i<buttonNames.Length; ++i)
+        {
+            customButton = FindChild(buttonNames[i]).GetComponent<CustomButton>();
+            if(customButton != null)
+            {
+                customButton.AddTapEvent(OnButtonTap);
+                m_ButtonList.Push(customButton);
+            }
+        }
 
         return true;
     }
@@ -74,6 +83,9 @@ public class UIStart : UIBase, CustomButtonListEvent
 
     public void OnTap(int nID)
     {
+        if (GameStateManager.mInstance.mNextStateID != GameStateID.Start)
+            return;
+
         switch((ButtonID)nID)
         {
             case ButtonID.Start:
@@ -88,5 +100,12 @@ public class UIStart : UIBase, CustomButtonListEvent
                 UIManager.mInstance.Show<UIWelcome>("UIWelcome");
                 break;
         }
+    }
+
+    private void OnButtonTap(object sender)
+    {
+        var customButton = sender as CustomButton;
+        if (customButton != null)
+            OnTap(customButton.mID);
     }
 }

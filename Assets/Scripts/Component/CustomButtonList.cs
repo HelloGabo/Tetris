@@ -43,6 +43,12 @@ public class CustomButtonList
         m_ButtonList.Add(button);
     }
 
+    public void SetVisible(bool visible)
+    {
+        for (int i = 0; i< m_ButtonList.Count; ++i)
+            m_ButtonList[i].gameObject.SetActive(visible);
+    }
+
     public void Next()
     {
         if (m_nCurIndex == m_nDefaultIndex)

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TetrisConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<TerisItem id="0" row="2" col="2">1,1,1,1</TerisItem>
+	<TerisItem id="1" row="1" col="4">1,1,1,1</TerisItem>
+	<TerisItem id="2" row="3" col="2">1,1,1,0,1,0</TerisItem>
+	<TerisItem id="3" row="3" col="2">1,1,0,1,0,1</TerisItem>
+	<TerisItem id="4" row="2" col="3">0,1,1,1,1,0</TerisItem>
+	<TerisItem id="5" row="2" col="3">1,1,0,0,1,1</TerisItem>
+
+</TetrisConfig>
+

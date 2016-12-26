@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScoreConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<ScoreItem line_count="1">10</ScoreItem>
+	<ScoreItem line_count="2">20</ScoreItem>
+	<ScoreItem line_count="3">30</ScoreItem>
+	<ScoreItem line_count="4">100</ScoreItem>
+
+</ScoreConfig>
+

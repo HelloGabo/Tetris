@@ -1,1 +1,8 @@
-UnityVS.*
+Library/*
+obj/*
+Temp/*
+
+.vs/*
+*.sln
+*.csproj
+UnityVS.Tetris.sln.DotSettings
